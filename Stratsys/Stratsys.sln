@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stratsys", "Stratsys\Stratsys.csproj", "{D543E02F-E6C8-4CB6-8E53-F9817421C781}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stratsys", "Stratsys\Stratsys.csproj", "{D543E02F-E6C8-4CB6-8E53-F9817421C781}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{2A6136B6-0604-40AE-A0CD-E6052BCCD1E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D543E02F-E6C8-4CB6-8E53-F9817421C781}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D543E02F-E6C8-4CB6-8E53-F9817421C781}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D543E02F-E6C8-4CB6-8E53-F9817421C781}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A6136B6-0604-40AE-A0CD-E6052BCCD1E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A6136B6-0604-40AE-A0CD-E6052BCCD1E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A6136B6-0604-40AE-A0CD-E6052BCCD1E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A6136B6-0604-40AE-A0CD-E6052BCCD1E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
