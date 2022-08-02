@@ -6,18 +6,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Common.SkiEquipment
+namespace Application.Common.Services
 {
     public class SkiEquipmentService : ISkiEquipmentService
     {
         public int GetRecommendedSkiLength(int length, int age, SkiType skiType)
         {
-            if(age <= 4)
+            if(length <= 0)
             {
-                return length; 
+                throw new ArgumentException("length must be greater than 0");
             }
 
-            if(age >= 5 && age <= 8)
+            if(age < 0)
+            {
+                throw new ArgumentException("Age cannot me less than zero");
+            }
+
+            if (age <= 4)
+            {
+                return length;
+            }
+
+            if (age >= 5 && age <= 8)
             {
                 return length + 20;
             }

@@ -19,12 +19,13 @@ public class SkiEquipmentController : ControllerBase
     [HttpGet]
     public IActionResult GetRecommendedSkiLength(SkiLengthRequest request)
     {
-        if(request.SkiType is null)
+        //Added this to avoid VS complaining about possible null reference on line 28.
+        if (request.Length is null || request.Age is null || request.SkiType is null)
         {
-            return BadRequest("Skitype is missing");
+            return BadRequest("Required data is missing from request");
         }
 
-        var result = _skiEquipmentService.GetRecommendedSkiLength(request.Length, request.Age, request.SkiType.Value);
+        var result = _skiEquipmentService.GetRecommendedSkiLength(request.Length.Value, request.Age.Value, request.SkiType.Value);
 
         return Ok(result);
     } 
