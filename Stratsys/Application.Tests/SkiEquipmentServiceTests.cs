@@ -1,4 +1,4 @@
-using Application.Common.Services;
+using Application.Common.Services.SkiEquipment;
 using Application.Enums;
 using Xunit;
 using FluentAssertions;
@@ -24,10 +24,11 @@ namespace Application.Tests
             var service = new SkiEquipmentService();
 
             //Act
-            var skiLength = service.GetRecommendedSkiLength(length, age, SkiType.Classic);
+            var result = service.GetRecommendedSkiLength(length, age, SkiType.Classic);
 
             //Assert
-            skiLength.Should().Be(expectedSkiLength);
+            result.Status.Should().Be(SkiEquipmentStatus.Ok);
+            result.Result.Should().Be(expectedSkiLength);
         }
 
         [Theory]
@@ -41,10 +42,11 @@ namespace Application.Tests
             var service = new SkiEquipmentService();
 
             //Act
-            var skiLength = service.GetRecommendedSkiLength(length, age, skiType);
+            var result = service.GetRecommendedSkiLength(length, age, skiType);
 
             //Assert
-            skiLength.Should().Be(expectedSkiLength);
+            result.Status.Should().Be(SkiEquipmentStatus.Ok);
+            result.Result.Should().Be(expectedSkiLength);
         }
 
         [Theory]
@@ -56,10 +58,10 @@ namespace Application.Tests
             var service = new SkiEquipmentService();
 
             //Act
-            Action act = () => service.GetRecommendedSkiLength(length, 10, SkiType.Classic);
+            var result = service.GetRecommendedSkiLength(length, 10, SkiType.Classic);
 
             //Assert
-            act.Should().Throw<ArgumentException>().WithMessage("length must be greater than 0");
+            result.Status.Should().Be(SkiEquipmentStatus.InvalidLength);
         }
 
         [Fact]
@@ -69,10 +71,10 @@ namespace Application.Tests
             var service = new SkiEquipmentService();
 
             //Act
-            Action act = () => service.GetRecommendedSkiLength(10, -1, SkiType.Freestyle);
+            var result = service.GetRecommendedSkiLength(10, -1, SkiType.Freestyle);
 
             //Assert
-            act.Should().Throw<ArgumentException>().WithMessage("Age cannot me less than zero");
+            result.Status.Should().Be(SkiEquipmentStatus.InvalidAge);
         }
     }
 }

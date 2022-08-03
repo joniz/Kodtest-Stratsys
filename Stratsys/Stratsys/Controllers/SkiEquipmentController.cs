@@ -1,6 +1,7 @@
 ﻿namespace Stratsys.Controllers;
 
 using Application.Common.Interfaces;
+using Application.Enums;
 using Contracts;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,7 +28,17 @@ public class SkiEquipmentController : ControllerBase
 
         var result = _skiEquipmentService.GetRecommendedSkiLength(request.Length.Value, request.Age.Value, request.SkiType.Value);
 
-        return Ok(result);
+        switch (result.Status)
+        {
+            case SkiEquipmentStatus.Ok:
+                return Ok(result.Result);
+            case SkiEquipmentStatus.InvalidLength:
+                return BadRequest("Length was invalid");
+            case SkiEquipmentStatus.InvalidAge:
+                return BadRequest("Age was invalid");
+            default:
+                throw new ApplicationException($"Unhandled Status: {result.Status}");
+        }
     } 
 
 }
