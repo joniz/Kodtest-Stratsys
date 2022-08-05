@@ -1,4 +1,4 @@
-﻿using Application.Enums;
+﻿using Application.Common.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace Stratsys.Contracts;

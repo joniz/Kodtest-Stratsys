@@ -1,12 +1,8 @@
-﻿using Application.Common.Interfaces;
-using Application.Enums;
+﻿using Application.Common.Enums;
+using Application.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Application.Common.Services.SkiEquipment
+namespace Application.Services.SkiEquipment
 {
     public class SkiEquipmentService : ISkiEquipmentService
     {
@@ -32,7 +28,7 @@ namespace Application.Common.Services.SkiEquipment
                 return new SkiEquipmentResult(length + 20);
             }
 
-            return skiType is SkiType.Classic ? 
+            return skiType is SkiType.Classic ?
                 new SkiEquipmentResult(Math.Min(length + 20, 207)) : new SkiEquipmentResult(Math.Min(length + 15, 192));
         }
     }

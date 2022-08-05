@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Application.Enums;
+using Application.Common.Enums;
 
-namespace Application.Common.Services.SkiEquipment
+namespace Application.Services.SkiEquipment
 {
     public class SkiEquipmentResult
     {
@@ -21,7 +17,7 @@ namespace Application.Common.Services.SkiEquipment
 
         public SkiEquipmentResult(SkiEquipmentStatus status)
         {
-            if(status is SkiEquipmentStatus.Ok)
+            if (status is SkiEquipmentStatus.Ok)
             {
                 throw new ArgumentException("Status is not allowed");
             }

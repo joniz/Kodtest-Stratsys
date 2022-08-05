@@ -1,7 +1,7 @@
 ﻿namespace Stratsys.Controllers;
 
-using Application.Common.Interfaces;
-using Application.Enums;
+using Application.Common.Enums;
+using Application.Interfaces;
 using Contracts;
 using Microsoft.AspNetCore.Mvc;
 

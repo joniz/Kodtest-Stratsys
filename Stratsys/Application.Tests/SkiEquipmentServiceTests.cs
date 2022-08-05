@@ -1,8 +1,8 @@
-using Application.Common.Services.SkiEquipment;
-using Application.Enums;
+using Application.Services.SkiEquipment;
 using Xunit;
 using FluentAssertions;
 using System;
+using Application.Common.Enums;
 
 namespace Application.Tests
 {

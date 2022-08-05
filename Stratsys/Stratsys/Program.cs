@@ -1,5 +1,5 @@
-using Application.Common.Interfaces;
-using Application.Common.Services.SkiEquipment;
+using Application.Interfaces;
+using Application.Services.SkiEquipment;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
